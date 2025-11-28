@@ -27,7 +27,6 @@ html, body {
 body {
     background-color: var(--main-bg-color);
     font-family: 'Dauphine', serif;
-    color: #808080; /* ??? */
 }
 
 .page-layout {
@@ -41,21 +40,25 @@ body {
 }
 
 /* En-tête gauche */
-.header-left {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    align-items: flex-start;
-}
-
-h1 {
+.header-left h1 {
     font-size: 32px;
     font-weight: 400;
     color: var(--main-title-color);
-    display: flex;
-    align-items: center;
+    display: inline-flex;      /* inline pour rester sur la même ligne */
+    align-items: baseline;     /* aligne la base du texte avec celle de l'image */
     gap: 8px;
 }
+
+.logo { 
+    display:inline-block;
+    height:1.5em;
+    width:auto;
+    transform:translate(0, 0.1em);
+    margin-left: 10px;
+}
+
+
+
 
 /* Contenu central */
 .main-content {
@@ -103,6 +106,8 @@ h1 {
     flex-direction: column;
     justify-content: flex-end;
     gap: 20px;
+    display: flex;
+    align-items: start;
     padding-bottom: 20px;
 }
 
@@ -115,6 +120,7 @@ h1 {
 
 .icon {
     height: 200px;
+    color: var(--main-text-color);
 }
 
 /* Footer */
