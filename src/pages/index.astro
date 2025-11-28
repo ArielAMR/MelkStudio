@@ -1,40 +1,77 @@
 ---
 import '../style/main.css';
-import Test from '../assets/favicon.svg';
+import { Image } from 'astro:assets';
+import Icon from '../assets/favicon.svg';
+import Logo from '../assets/logo.png';
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-        <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> ADD LOGO -->
-		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Melk Studio</title>
+		<meta name="description" content="Melk Studio - Studio de design graphique et de direction artistique fondé par Clémentine Fleck et Mélina Loiret. Identités visuelles, éditions et projets numériques." />
+		<meta name="keywords" content="design graphique, direction artistique, identité visuelle, studio design Paris, typographie, UX/UI design" />
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Melk Studio - Design Graphique & Direction Artistique" />
+		<meta property="og:description" content="Studio de design graphique et de direction artistique à Paris. Identités visuelles, éditions et projets numériques." />
+		<meta property="og:image" content="../assets/logo.png" />
+		
+		<title>Melk Studio - Design Graphique & Direction Artistique</title>
 	</head>
 	<body>
-        <section class="center">
-		    <h1>melk studio</h1>
-            <p>
-                Nous sommes un studio de design graphique et de direction 
-                artistique fondé par Clémentine Fleck et Mélina Loiret, à la 
-                suite de notre rencontre à l’École de Condé à Paris. Le 
-                studio développe des identités visuelles, des éditions et 
-                des projets numériques, nourris par une approche 
-                collaborative et sensible aux récits, aux formes, aux 
-                couleurs et aux matières. Nous avons notamment pu 
-                collaborer avec des structures telles que le Carreau du 
-                Temple et le festival We Love Green. 
-                <br/>
-                <br/>
-                Le portfolio du studio est disponible sur demande par mail.
-            </p>
-            <h4>[Affiche] [Design éditorial] [Design graphique] [Direction artistique] [Identité visuelle] [Signalétique] [Typographie] [UX/UI design]</h4>
-        </section>
-        <footer>
-            <Test class="svg-footer" />
-            <a class="footer-component" href="" target="_blank">Contact</a>
-            <a class="footer-component" href="https://www.instagram.com/melkstudio.pdf" target="_blank">Instagram</a>
-            <a class="footer-component" href="https://www.behance.net/melk-studio" target="_blank">Behance</a>
-        </footer>
-    </body>
+		<div class="page-layout">
+			<!-- En-tête gauche -->
+			<header class="header-left">
+				<h1>melk studio<Image src={Logo} alt="logo" class="logo"/></h1>
+			</header>
+
+			<!-- Contenu central -->
+			<main class="main-content">
+				<p>
+					Nous sommes un studio de design graphique et de direction 
+					artistique fondé par Clémentine Fleck et Mélina Loiret, à la 
+					suite de notre rencontre à l'École de Condé à Paris. Le 
+					studio développe des identités visuelles, des éditions et 
+					des projets numériques, nourris par une approche 
+					collaborative et sensible aux récits, aux formes, aux 
+					couleurs et aux matières. Nous avons notamment pu 
+					collaborer avec des structures telles que le Carreau du 
+					Temple et le festival We Love Green.
+                    <br><br>
+					Le portfolio du studio est disponible sur demande par mail.
+				</p>
+			</main>
+
+			<!-- Liste des services à droite -->
+			<aside class="services-list">
+				<ul>
+					<li>[Affiche]</li>
+					<li>[Design éditorial]</li>
+					<li>[Design graphique]</li>
+					<li>[Direction artistique]</li>
+					<li>[Identité visuelle]</li>
+					<li>[Signalétique]</li>
+					<li>[Typographie]</li>
+					<li>[UX/UI design]</li>
+				</ul>
+			</aside>
+
+			<!-- Zone vide en bas à gauche -->
+			<div class="bottom-left">
+				<Icon class="icon"/>
+			</div>
+
+			<!-- Footer -->
+			<footer class="footer">
+				<a href="mailto:contact@melkstudio.fr" rel="noopener noreferrer">Contact</a>
+				<a href="https://www.instagram.com/melkstudio.pdf" target="_blank" rel="noopener noreferrer">Instagram</a>
+				<a href="https://www.behance.net/melk-studio" target="_blank" rel="noopener noreferrer">Behance</a>
+			</footer>
+		</div>
+	</body>
 </html>
