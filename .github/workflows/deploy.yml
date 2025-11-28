@@ -1,0 +1,38 @@
+name: Déployer sur GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extraire votre dépôt à l'aide de git
+        uses: actions/checkout@v5
+      - name: Installer, compiler et télécharger votre site
+        uses: withastro/action@v5
+        with:
+          path: .
+          node-version: 24
+          package-manager: npm@latest
+          # build-cmd: pnpm run build # La commande à exécuter pour compiler votre site. Exécute par défaut le script/la tâche de compilation du paquet. (facultatif)
+        # env:
+          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Utilisez des guillemets simples pour la valeur de la variable. (facultatif)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
