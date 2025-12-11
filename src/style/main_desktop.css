@@ -64,7 +64,6 @@ body {
 }
 
 .main-content p {
-    transform: translate(0, -0.1em);
     width: 847px;
     font-size: var(--primary-font-size);
     letter-spacing: var(--primary-letter-gap);
@@ -111,6 +110,12 @@ body {
     height: 319px;
     width: auto;
     color: var(--main-text-color);
+    transition: color 0.5s; /* voir avis */
+}
+
+.icon:hover {
+    color: var(--secondary-text-color);
+    transition: color 0.5s; /* voir avis */
 }
 
 /* Footer */
