@@ -35,9 +35,9 @@ body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     width: 100vw;
-    padding-left: 76px;
-    padding-right: 48px;
-    padding-top: 41px;
+    padding-left: 57px;
+    padding-right: 35px;
+    padding-top: 61px;
     padding-bottom: 0px;
     gap: 40px;
 }
@@ -45,9 +45,8 @@ body {
 /* En-tête gauche */
 .logo { 
     display: inline-block;
-    height: 46px;
+    height: 35px;
     width: auto;
-    transform: translate(0, 0.1em);
 }
 
 /* Contenu central */
@@ -61,10 +60,11 @@ body {
 }
 
 .main-content p {
-    width: 847px;
-    font-size: 35px;
+    transform: translate(0, -0.1em);
+    width: 636px;
+    font-size: 34px;
     letter-spacing: 0px;
-    line-height: 1.6;
+    line-height: 1.2;
     color: var(--main-text-color);
     text-align: left;
 }
@@ -84,7 +84,7 @@ body {
 }
 
 .services-list li {
-    font-size: 35px;
+    font-size: 34px;
     color: var(--secondary-text-color);
     margin-bottom: 8px;
     line-height: 1.4;
@@ -118,7 +118,7 @@ body {
 }
 
 .footer a {
-    font-size: 35px;
+    font-size: 34px;
     color: var(--secondary-text-color);
     text-decoration: none;
     transition: opacity 0.3s ease;
