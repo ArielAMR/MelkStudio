@@ -35,30 +35,20 @@ body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     width: 100vw;
-    padding: 40px;
+    padding-left: 76px;
+    padding-right: 48px;
+    padding-top: 41px;
+    padding-bottom: 0px;
     gap: 40px;
 }
 
 /* En-tête gauche */
-.header-left h1 {
-    font-size: 32px;
-    font-weight: 400;
-    color: var(--main-title-color);
-    display: inline-flex;      /* inline pour rester sur la même ligne */
-    align-items: baseline;     /* aligne la base du texte avec celle de l'image */
-    gap: 8px;
-}
-
 .logo { 
-    display:inline-block;
-    height:1.5em;
-    width:auto;
-    transform:translate(0, 0.1em);
-    margin-left: 10px;
+    display: inline-block;
+    height: 46px;
+    width: auto;
+    transform: translate(0, 0.1em);
 }
-
-
-
 
 /* Contenu central */
 .main-content {
@@ -71,7 +61,9 @@ body {
 }
 
 .main-content p {
-    font-size: 24px;
+    width: 847px;
+    font-size: 35px;
+    letter-spacing: 0px;
     line-height: 1.6;
     color: var(--main-text-color);
     text-align: left;
@@ -92,7 +84,7 @@ body {
 }
 
 .services-list li {
-    font-size: 24px;
+    font-size: 35px;
     color: var(--secondary-text-color);
     margin-bottom: 8px;
     line-height: 1.4;
@@ -101,25 +93,17 @@ body {
 /* Zone en bas à gauche */
 .bottom-left {
     grid-column: 1;
-    grid-row: 2 / 4;
+    grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: left;
     gap: 20px;
-    display: flex;
     align-items: start;
-    padding-bottom: 20px;
-}
-
-.decorative-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
 }
 
 .icon {
-    height: 200px;
+    height: 319px;
+    width: auto;
     color: var(--main-text-color);
 }
 
@@ -129,12 +113,12 @@ body {
     grid-row: 3;
     display: flex;
     align-items: flex-end;
-    gap: 60px;
-    padding-bottom: 20px;
+    gap: 42px;
+    padding-bottom: 41px;
 }
 
 .footer a {
-    font-size: 24px;
+    font-size: 35px;
     color: var(--secondary-text-color);
     text-decoration: none;
     transition: opacity 0.3s ease;
