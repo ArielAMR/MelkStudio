@@ -12,7 +12,8 @@
     --secondary-text-color: #A7D4B9;
 
     --primary-font-size: 39px;
-    --primary-line-gap: 1.2;
+    --primary-line-gap: 1.3;
+    --secondary-line-gap: 1;
     --primary-letter-gap: 0px;
 }
 
@@ -89,7 +90,7 @@ body {
 .services-list li {
     font-size: var(--primary-font-size);
     letter-spacing: var(--primary-letter-gap);
-    line-height: var(--primary-line-gap);
+    line-height: var(--secondary-line-gap);
     color: var(--secondary-text-color);
     margin-bottom: 8px;
     line-height: 1.4;
