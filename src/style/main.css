@@ -85,7 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     overflow-y: auto;
     flex: 1;
 }
@@ -97,6 +97,16 @@ body {
     line-height: var(--primary-line-gap);
     color: var(--main-text-color);
     text-align: left;
+}
+
+/* Mentions légales - sous le texte principal sur mobile */
+.mentions-legales {
+    order: 4;
+    font-size: 9px;
+    color: var(--main-text-color);
+    text-align: left;
+    line-height: 1.3;
+    margin-bottom: 20px;
 }
 
 /* Services à droite - position fixed */
@@ -138,9 +148,9 @@ body {
    Iphone 14 Pro Max (430x932)
    ============================================ */
 
-@media (min-width: 430px) and (max-width: 768px) and (orientation: portrait) and (max-height: 1000px) {
+@media (min-width: 430px) and (max-width: 767px) and (orientation: portrait) {
     :root {
-        --primary-font-size: 24px;
+        --primary-font-size: 21px;
     }
 
     .logo {
@@ -165,6 +175,10 @@ body {
 
     .icon {
         height: 233px;
+    }
+
+    .mentions-legales {
+        font-size: 11px;
     }
 }
 
@@ -192,7 +206,7 @@ body {
         grid-template-rows: auto 1fr auto;
         height: 100vh;
         width: 100vw;
-        padding: 43px 25px 0px 40px;
+        padding: 43px 25px 62px 40px;
         gap: 40px;
     }
 
@@ -203,28 +217,47 @@ body {
         grid-row: 1;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-bottom: 35px;
+        margin-bottom: 0;
     }
 
     .logo {
         height: 36px;
     }
 
-    /* Services en haut à droite */
+    /* Services en haut à droite avec mentions en bas */
     .services-list {
         position: static;
         grid-column: 3;
-        grid-row: 1 / 3;
+        grid-row: 1 / 4;
         display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
         bottom: auto;
         right: auto;
+    }
+
+    .services-list ul {
+        margin: 0;
     }
 
     .services-list li {
         font-size: var(--primary-font-size);
         margin-bottom: 8px;
+    }
+
+    /* Mentions légales en bas de la colonne services */
+    .services-list .mentions-legales {
+        display: block;
+        font-size: 11px;
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+
+    /* Cache les mentions du main-content */
+    .page-layout > .mentions-legales {
+        display: none;
     }
 
     /* Contenu central */
@@ -235,7 +268,7 @@ body {
         justify-content: flex-start;
         gap: 40px;
         margin-bottom: 0;
-        overflow-y: visible;
+        overflow-y: auto;
         flex: none;
     }
 
@@ -252,7 +285,7 @@ body {
         justify-content: flex-start;
         align-items: flex-end;
         gap: 44px;
-        padding-bottom: 62px;
+        padding-bottom: 0;
         margin-bottom: 0;
     }
 
@@ -263,7 +296,7 @@ body {
     /* Bottom right - icônes et bloc en bas à droite */
     .bottom-left {
         position: static;
-        grid-column: 2 / 4;
+        grid-column: 2 / 3;
         grid-row: 3;
         display: flex;
         flex-direction: row;
@@ -324,7 +357,7 @@ body {
         display: flex;
         flex-direction: column;
         height: 100vh;
-        padding: 56px 50px 0px 50px;
+        padding: 56px 50px 24px 50px;
         gap: 0;
         overflow: hidden;
     }
@@ -365,16 +398,33 @@ body {
         font-size: var(--primary-font-size);
     }
 
-    /* Services à droite - position fixed */
+    /* Cache les mentions du main-content */
+    .page-layout > .mentions-legales {
+        display: none;
+    }
+
+    /* Services à droite - position fixed en bas */
     .services-list {
         position: fixed;
-        bottom: 24px;
+        bottom: 0;
         right: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     .services-list li {
         font-size: var(--primary-font-size);
         margin-bottom: 5px;
+    }
+
+    /* Mentions légales sous les services */
+    .services-list .mentions-legales {
+        display: block;
+        font-size: 11px;
+        text-align: right;
+        margin-top: 20px;
+        margin-bottom: 24px;
     }
 
     /* Bottom left - icône position fixed */
@@ -457,8 +507,9 @@ body {
         grid-column: 3;
         grid-row: 1 / 3;
         display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
         bottom: auto;
         right: auto;
     }
@@ -466,6 +517,21 @@ body {
     .services-list li {
         font-size: var(--primary-font-size);
         margin-bottom: 8px;
+    }
+
+    /* Mentions légales sous les services */
+    .mentions-legales span {
+        display: none;
+    }
+    .mentions-legales {
+        order: initial;
+        font-size: 13px;
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding-bottom: 41px;
+        white-space: pre;
+        content: "Mentions légales\AMelk Studio, 75019 Paris\A Clémentine Fleck et Mélina Loiret,\A contact@melkstudio.fr\AHébergement : Infomaniak Network SA";
     }
 
     /* Zone en bas à gauche */
@@ -577,8 +643,9 @@ body {
         grid-column: 3;
         grid-row: 1 / 3;
         display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
         bottom: auto;
         right: auto;
     }
@@ -587,6 +654,24 @@ body {
         font-size: var(--primary-font-size);
         margin-bottom: 8px;
         line-height: 1.4;
+    }
+
+    /* Mentions légales sous les services */
+    .mentions-legales span {
+        display: none;
+    }
+    .mentions-legales::after {
+        width: 220px;
+        position: absolute;
+        order: initial;
+        font-size: 14px;
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: 0;
+        bottom: 41px;
+        right: 41px;
+        white-space: pre;
+        content: "Mentions légales\AMelk Studio, 75019 Paris\A Clémentine Fleck et Mélina Loiret,\A contact@melkstudio.fr\AHébergement : Infomaniak Network SA";
     }
 
     /* Zone en bas à gauche */
